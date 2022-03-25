@@ -1,6 +1,7 @@
 from selenium import webdriver
 from utils import get_period
 from config import *
+import asyncio
 
 completed = False
 
@@ -27,3 +28,6 @@ link = f"https://docs.google.com/forms/d/e/{form_id}/formResponse"
 link += f"?{entries[0]}={data[0]}&{entries[1]}={data[1]}&{entries[2]}={name[0]}&{entries[3]}={name[1]}&" \
         f"{entries[4]}=Leaving Class&{entries[5]}={message}"
 driver.get(link)
+await asyncio.sleep(5)
+driver.close()
+print("Your bathroom pass has been submitted!")
