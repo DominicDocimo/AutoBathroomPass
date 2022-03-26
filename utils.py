@@ -1,6 +1,7 @@
 from datetime import datetime
 from config import teachers
 
+
 def get_period(day: str):
     current_seconds = 3600 * (datetime.now().hour + (datetime.now().minute / 60))
     if current_seconds < 27000 or current_seconds > 53000:
